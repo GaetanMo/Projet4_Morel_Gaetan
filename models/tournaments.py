@@ -1,5 +1,4 @@
 
-import random
 
 class Tournament:
     def __init__(self, name, location, start_date, end_date, num_rounds=4, current_round=1, rounds=None, players=None, description=""):
@@ -25,18 +24,4 @@ class Tournament:
     def record_result(self, match, result):
         pass
 
-    def generate_pairs(self):
-        # Tri des joueurs par points décroissants
-        sorted_players = sorted(self.players, key=lambda player: player.total_points, reverse=True)
-        
-        # Génération des paires
-        pairs = []
-        for i in range(0, len(sorted_players), 2):
-            if i+1 < len(sorted_players):
-                pair = (sorted_players[i], sorted_players[i+1])
-                pairs.append(pair)
-        
-        # Mélange des paires pour éviter les matchs identiques
-        random.shuffle(pairs)
-        
-        return pairs
+    
